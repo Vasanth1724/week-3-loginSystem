@@ -2,10 +2,10 @@ import {connect } from 'mongoose'
 
 export const connectToDb = async() =>{
     try{
-        if(!process.env.MONGO_URL){
+        if(!process.env.MONGO_URI){
             throw new Error("db enviroment no set");
         }
-        await connect(process.env.MONGO_URL);
+        await connect(process.env.MONGO_URI);
         console.log("db connected successfully");
     }
     catch (error){
